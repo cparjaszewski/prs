@@ -1,0 +1,25 @@
+<form class="form-horizontal">
+
+<!-- Form Name -->
+<legend>Wybierz miejsce:</legend>
+<?php $it = 0; ?>
+<?php for ($i = 0; $i < $this->rows; $i++): ?>
+<!-- Button -->
+<div class="control-group">
+  <label class="control-label"></label>
+  <div class="controls">
+    <?php for ($j = 0; $j < $this->columns; $j++):
+        $it++;
+        if ($it < 10)
+            $separator = '&nbsp;&nbsp;';
+        elseif ($it < 100)
+            $separator = '&nbsp;';
+        else $separator = '';
+     ?>
+    <button id="singlebutton" name="singlebutton" class="btn btn-success"><?= $separator . $it ?></button>
+    <?php endfor; ?>
+  </div>
+</div>
+<?php endfor; ?>
+
+</form>
